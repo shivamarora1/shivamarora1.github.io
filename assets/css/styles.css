@@ -1,0 +1,23 @@
+body {
+    padding: 2vw;
+    font-family: sans-serif;
+}
+nav {
+    font-size: 1.4vw;
+    text-align: center;
+}
+nav a {
+    margin-right: 11px;
+    color: black;
+    text-decoration: revert;
+}
+nav a.current{
+    color: grey;
+    font-style: italic;
+}
+.content {
+    padding: 1vw 4vw;
+}
+.comming_soon {
+    text-align: center;
+}
