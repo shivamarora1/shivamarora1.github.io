@@ -1,13 +1,28 @@
 ---
 title: Blog
 ---
-<h1>Latest Posts</h1>
 
-<ul>
-  {% for post in site.posts %}
+<h3>Latest Posts</h3>
+
+<div id="blog">
+  <ul>
+    {% for post in site.posts %}
     <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
+      <div class="post">
+        <a href="{{ post.url }}">
+          <div class="heading">{{ post.title }}</div>
+          <div class="sub-script">
+            Posted on {{post.date | date_to_string}} · 
+            {% for c in post.categories%} 
+              {% assign category = site.categories | where: 'alias', c | first %} 
+              {% if category%}
+                <a href="{{category.url}}"><span class="category">{{category.title}}</span></a>&nbsp;
+              {% endif%} 
+            {% endfor %}
+          </div>
+        </a>
+      </div>
     </li>
-  {% endfor %}
-</ul>
+    {% endfor %}
+  </ul>
+</div>

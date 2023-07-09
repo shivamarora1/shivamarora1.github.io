@@ -1,59 +1,86 @@
-html,body{
-    height: 95%;
+html,
+body {
+  height: 95%;
 }
 body {
-    font-family: sans-serif;
-    padding: 2vw;
+  font-family: sans-serif;
+  padding: 2vw;
 }
 nav {
-    font-size: 1.4vw;
-    text-align: center;
+  font-size: 1.4vw;
+  text-align: center;
 }
 nav a {
-    margin-right: 11px;
-    color: black;
-    text-decoration: revert;
+  margin-right: 11px;
+  color: black;
+  text-decoration: revert;
 }
-nav a.current{
-    color: grey;
-    font-style: italic;
+nav a.current {
+  color: grey;
+  font-style: italic;
 }
 .content {
-    padding: 1vw 17vw;
-    flex: 1;
+  padding: 1vw 17vw;
+  flex: 1;
 }
 .page-content {
-    min-height: 95%;
-    display: flex;
-    flex-direction: column;
+  min-height: 95%;
+  display: flex;
+  flex-direction: column;
 }
 .comming_soon {
-    text-align: center;
+  text-align: center;
 }
 
-.black_link{
-    text-decoration: revert;
-    color: black;
-    font-style: italic;
+.black_link {
+  text-decoration: revert;
+  color: black;
+  font-style: italic;
 }
-#skills ul{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    list-style-type: none;
-}
-
-#skills ul li{
-    margin-bottom: 4px;
-}
-#skills li i{
-    font-size: 0.85em;
-    font-weight: 600;
+#skills ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style-type: none;
 }
 
-#professional_links ul{
-    padding: 0;
+#skills ul li {
+  margin-bottom: 4px;
+}
+#skills li i {
+  font-size: 0.85em;
+  font-weight: 600;
 }
 
-footer{
-    text-align:center;
+#professional_links ul {
+  padding: 0;
+}
+
+footer {
+  text-align: center;
+}
+
+.post a {
+  text-decoration: none;
+  color: black;
+}
+
+#blog ul {
+  list-style: none;
+}
+.post {
+  margin: 0.5vw 0;
+}
+.post .heading {
+  font-weight: 600;
+  text-decoration: underline;
+}
+.post .sub-script {
+  font-style: italic;
+  font-weight: 100;
+  color: gray;
+  font-size: 1vw;
+}
+.post .sub-script .category {
+    color: blue;
+    text-decoration: underline;
 }
