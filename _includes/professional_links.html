@@ -1,0 +1,7 @@
+<div id="professional_links">
+    <ul>
+        {% for link in site.data.professional%}
+        <li><b>{{link.title}}:</b> <i><a href="{{link.url}}">{{link.url}}</a></i></li>
+        {% endfor%}
+    </ul>
+</div>
