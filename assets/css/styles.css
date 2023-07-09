@@ -1,6 +1,6 @@
 body {
-    padding: 2vw;
     font-family: sans-serif;
+    padding: 2vw;
 }
 nav {
     font-size: 1.4vw;
@@ -16,8 +16,27 @@ nav a.current{
     font-style: italic;
 }
 .content {
-    padding: 1vw 4vw;
+    padding: 1vw 17vw;
 }
 .comming_soon {
     text-align: center;
+}
+.content a{
+    text-decoration: revert;
+    color: black;
+    font-style: italic;
+}
+
+#skills ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style-type: none;
+}
+
+#skills ul li{
+    margin-bottom: 4px;
+}
+#skills li i{
+    font-size: 0.85em;
+    font-weight: 600;
 }
