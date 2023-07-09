@@ -1,0 +1,4 @@
+---
+alias: personal
+title: Personal
+---

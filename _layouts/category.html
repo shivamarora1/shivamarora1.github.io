@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h3>{{page.title}}</h3>
+{{content}}
+
+<ul>
+    {% assign filtered_posts = site.posts | where: 'categories', page.alias %}
+    {% for post in filtered_posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>

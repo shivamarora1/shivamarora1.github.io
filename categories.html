@@ -1,0 +1,10 @@
+---
+layout: default
+title: Categories
+---
+<h1>Categories</h2>
+<ul>
+    {% for c in site.categories%}
+    <li><a href="{{c.url}}"><h2>{{c.title}}</h2></a></li>
+    {% endfor %}
+</ul>

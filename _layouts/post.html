@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<h3>{{page.title}}</h3>
+<b>Published on:</b> {{page.date | date_to_string}}<br />
+<b>Categories:</b>
+
+{% for c in page.categories%} 
+    {% assign category = site.categories | where: 'alias', c | first %} 
+        {% if category%}
+            <i><a href="{{category.url}}">{{category.title}}</a></i> 
+        {% endif%} 
+{% endfor %}
+{{content}}

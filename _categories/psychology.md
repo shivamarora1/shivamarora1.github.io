@@ -1,0 +1,4 @@
+---
+alias: psychology
+title: Psychology
+---
