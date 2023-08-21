@@ -1,6 +1,10 @@
 # To live reload the project:
 bundle exec jekyll serve --livereload
 
+-- Tools used:
+1. Diagram: Mermaid JS
+2. draw.io
+3. GIMP
 
 -- Steps to create new post.
 1. Create a new file (.md) inside _posts folder.

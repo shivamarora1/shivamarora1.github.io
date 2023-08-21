@@ -1,0 +1,4 @@
+---
+alias: ai
+title: AI
+---
