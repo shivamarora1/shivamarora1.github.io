@@ -1,6 +1,5 @@
 ---
 categories: [ai]
-published: false
 title: What really Prompt Engineers do?
 ---
 
@@ -20,11 +19,15 @@ Let us try to understand this with a example.
 
 The prompt template for this task would be: 
 ```
-{no-questions} unique question on {topic} with {choices} choices in {csv|json|yaml} format
+{num-questions} unique question on {topic} with {choices} choices in {csv|json|yaml} format
 ```
 
 In this template user have to replace variables to get the desired output. This is simplest example of prompt engineering's work but it can become complex as per requirement.
 ```
 Write a prompt to generate the thumbnail for the batch of Youtube videos.
 Write a prompt to extract required information from the CV.
-``
+```
+
+Always remember following steps when you give a prompt to model:
+1. Write simple and clear instructions: Model will give correct output only if it is given clear input. Be specific about your input format.
+2. Give model time to think: Write strategies and steps that model need to follow to transform input to correct output.
