@@ -1,31 +1,13 @@
 ---
 categories: [ai]
 title: Document Transformers?
-hidden: true
 ---
 ### Document Transformers
 In this article we are going to discuss about the document transformers. Basically document transformer is the process in which we split the large documents into multiple smaller chunks so that they can be retrieved easily.
 
 The document transformation seems easy but it becomes complex when you go deeper.
 
-``` mermaid
----
-title: Document Transformation
----
-flowchart LR
-    LD[Large Document]
-    subgraph chunks
-        direction TB
-        CH1[Chunk 1]
-        CH2[Chunk 2]
-        CH3[Chunk 3]
-        CH1 ~~~ CH2 ~~~ CH3
-    end
-
-    VDB[(Vector DB)]
-    LD --> chunks
-    chunks --> VDB
-```
+![document_transformation](/assets/images/document_transformation.png)
 
 In RAG (Retrieval-Augmented Generation), Knowledge of LLM is extended by providing context of the document. This makes the answer of LLM more reliable and avoids hallucination. The pipeline for converting raw data looks like this in RAG:
 1. Loading
@@ -34,56 +16,23 @@ In RAG (Retrieval-Augmented Generation), Knowledge of LLM is extended by providi
 4. Retrieval
 5. Generation
 
-```mermaid
----
-Title: RAG Chain
----
-flowchart LR
-    subgraph Loading
-        direction TB
-        url[[URL]]
-        db[(Database)]
-        url ~~~ db
-    end    
-    
-    subgraph Splitting
-        direction TB
-        ch-1[Chunk 1]
-        ch-2[Chunk 2]
-        ch-3[Chunk 3]
-        ch-1  ~~~ ch-2 ~~~ ch-3
-    end
+![rag](/assets/images/rag.png)
 
-    subgraph Storage
-        direction TB
-        VS[(Vector Store)]
-    end
+### Document Splitting
+Document splitting is process of transforming document into smaller pieces so that later on it can be passed as context in prompt. During process of splitting document we try to keep the semantically related document pieces together. We make sure every chunk has meaning ful information after splitting it from long document.
 
-    subgraph Retrieval
-        direction TB
-        ch-4[Chunk]
-        ch-5[Chunk]
-        ch-6[Chunk]
-        ch-4  ~~~ ch-5 ~~~ ch-6
-    end
-    
-    subgraph Output
-        direction LR
-        pr[Prompt]
-        llm((LLM))
-        pr  --> llm
-    end
+#### Recursive Character Text Splitter
+It is very basic text splitter. It takes the list of character and tries to create chunks based on splitting on the first character, but if chunks are too large and exceed the chunk size then it takes the next character from the list and repeats the process. `chunk_overlap` ensures continuity between the multiple chunks.
 
-    ans(Answer)
-
-    Loading --Documents--> Splitting    
-    Splitting --> Storage
-    Storage --Similar Search --> Retrieval
-    Retrieval --Relevant Splits--> Output
-    Output --> ans
+```
+text_splitter = RecursiveCharacterTextSplitter(chunk_size = 100, chunk_overlap=20,separators=["\n\n", "\n", " ", ""])
 ```
 
-reference: 
-https://python.langchain.com/docs/use_cases/question_answering/
-https://www.promptingguide.ai/techniques/rag
-https://python.langchain.com/docs/modules/data_connection/document_transformers/
+This text splitter is not context splitter which means some of the chunks would be meaning less.
+
+#### Split by tokenizer
+In this technique we use tokenizer like `spacy`, `tiktoken` to make the chunks. This technique maintains context of chunks. `SpacyTextSplitter` takes two argument `separator` and `chunk_size`. Spacy splitter splits the document based on separator then it combines chunks until the chunk size limit is reached.
+
+```
+text_splitter = SpacyTextSplitter(separators="\n",chunk_size=1000)
+```
