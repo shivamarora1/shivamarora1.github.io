@@ -37,7 +37,7 @@ plugins:
 collections:
   categories:
     output: true  
-  
+favicon: assets/images/favicon.ico  
 defaults:
   - scope:
       path: ""
