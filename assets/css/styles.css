@@ -102,3 +102,7 @@ footer {
   font-size: 0.9vw;
   font-style: italic;
 }
+
+#professional_links ul li {
+  margin: 0.25vw 0
+}

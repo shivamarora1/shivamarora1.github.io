@@ -1,0 +1,21 @@
+<div id="blogs_home">
+    <h3>Latest Blogs</h3>
+    <ul>
+        {% for post in site.posts limit:3 %}
+        <li>
+            <div class="post">
+                {% if post.external_link %}
+                <a href="{{ post.external_link }}">
+                {% else %}
+                <a href="{{ post.url }}">
+                {% endif %}
+                <div class="heading">{{ post.title }}</div>
+                <div class="sub-script">
+                    Posted on {{post.date | date_to_string}}
+                </div>
+                </a>
+            </div>
+        </li>
+        {% endfor%}
+    </ul>
+</div>
