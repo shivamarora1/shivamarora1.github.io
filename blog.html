@@ -2,14 +2,18 @@
 title: Blog
 ---
 
-<h3>Latest Posts</h3>
+<h3>Posts</h3>
 
 <div id="blog">
   <ul>
     {% for post in site.posts %}
     <li>
       <div class="post">
+        {% if post.external_link %}
+        <a href="{{ post.external_link }}">
+        {% else %}
         <a href="{{ post.url }}">
+        {% endif %}
           <div class="heading">{{ post.title }}</div>
           <div class="sub-script">
             Posted on {{post.date | date_to_string}} · 
