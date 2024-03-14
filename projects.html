@@ -1,4 +1,20 @@
 ---
 title: Projects
 ---
-{%include comming_soon.html%}
+<h3>Projects</h3>
+
+<div id="projects">
+  <ul>
+    {% for project in site.data.projects %}
+    <li>
+      <div class="project">
+        <div class="heading">{{ project.title }}</div>
+        <div class="sub-script">
+        Posted on {{project.description}}<br>
+        <a href="{{project.github_link}}">Source Code</a>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

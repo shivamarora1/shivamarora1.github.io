@@ -1,0 +1,6 @@
+- title: Movie Search by Plot
+  description: Leveraging semantic search technique to retrieve relevant movie plots from Milvus vector database.
+  github_link: https://github.com/shivamarora1/msp
+- title: Birthday Calender
+  description: NextJS website connecting with Postgres database and styled using Tailwind CSS.
+  github_link: https://github.com/shivamarora1/birthday-calender  

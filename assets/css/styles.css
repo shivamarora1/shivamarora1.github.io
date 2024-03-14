@@ -84,3 +84,21 @@ footer {
     color: blue;
     text-decoration: underline;
 }
+
+.project {
+  margin: 0.5vw 0 0.8vw 0;
+}
+.project .heading {
+  font-weight: 600;
+}
+.project .sub-script {
+  font-weight: 100;
+  color: gray;
+  font-size: 1vw;
+}
+
+.project .sub-script a {
+  font-weight: 100;
+  font-size: 0.9vw;
+  font-style: italic;
+}
