@@ -1,0 +1,4 @@
+---
+alias: workshop
+title: Workshop
+---
