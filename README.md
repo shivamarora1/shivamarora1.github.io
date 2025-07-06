@@ -15,3 +15,5 @@ bundle exec jekyll serve --livereload
 1. Favicon.
 2. Pagination (May be in future).
 3. Improve style of blog page.
+
+Deployment
