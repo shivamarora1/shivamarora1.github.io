@@ -1,7 +1,26 @@
-<div id="professional_links">
-    <ul>
-        {% for link in site.data.professional%}
-        <li><b>{{link.title}}:</b> <i><a href="{{link.url}}">{{link.url}}</a></i></li>
-        {% endfor%}
-    </ul>
+<h2
+  class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+>
+  Social Media
+</h2>
+<div class="flex gap-2 p-3">
+  {% for link in site.data.professional%}
+  <button
+    title="{{link.title}}"
+    onclick="window.open('{{link.url}}', '_blank');"
+    class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 bg-[#493222] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+  >
+    <div class="text-white" data-size="20px" data-weight="regular">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20px"
+        height="20px"
+        fill="currentColor"
+        viewBox="0 0 256 256"
+      >
+        <path d="{{link.path}}"></path>
+      </svg>
+    </div>
+  </button>
+  {% endfor%}
 </div>

@@ -1,8 +1,14 @@
-<div id="skills">
-    <h3>Skills / Experience</h3>
-    <ul>
-        {%for skill in site.data.skills%}
-        <li>- {{skill.title}} <i>({{skill.experience}})</i></li>
-        {% endfor %}
-    </ul>
+<h2
+  class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+>
+  Skills &amp; Experience
+</h2>
+<div class="flex gap-3 p-3 flex-wrap pr-4">
+  {%for skill in site.data.skills%}
+  <div
+    class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded bg-[#493222] pl-4 pr-4"
+  >
+    <p class="text-white text-sm font-medium leading-normal">{{skill.title}}</p>
+  </div>
+  {% endfor %}
 </div>

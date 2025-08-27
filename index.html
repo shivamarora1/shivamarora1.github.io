@@ -1,12 +1,37 @@
 ---
 title: Home
 ---
-Hi, I am <b>Shivam</b>.
-<br><br>
-I have 6+ years of experience in <b>software engineering</b>.<br>
-I help startups in <b>building scalable</b> and <b>highly available</b> distributed <b>web servers</b>.<br>
-Currently I am working as a consultant in <b><a class="black_link" href="www.tarkalabs.com">Tarka Labs</a></b>. I am acquiring proficiency in harnessing artificial intelligence and machine learning techniques to develop resilient and intelligent applications tailored to meet clients' needs. 
-<br><br>
-{%include skills.html%}
-<br>{%include professional_links.html%}
-<br>{%include blog_home.html%}
+
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+  <h1
+    class="text-white tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6"
+  >
+    Shivam Arora
+  </h1>
+  <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
+    I have 6+ years of experience in software engineering. I help startups in
+    building scalable and highly available distributed web servers. Currently I
+    am working as a consultant in
+    <a target="_blank" href="https://tarkalabs.com">Tarka Labs</a>. I am
+    acquiring proficiency in harnessing artificial intelligence and machine
+    learning techniques to develop resilient and intelligent applications
+    tailored to meet client's needs.
+  </p>
+  <div class="flex justify-stretch">
+    <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
+      <button
+        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 bg-[#f26c0d] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+      >
+        <span class="truncate">View Portfolio</span>
+      </button>
+      <button
+        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 bg-[#493222] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+      >
+        <span class="truncate">Read Blog</span>
+      </button>
+    </div>
+  </div>
+
+  {%include skills.html%} {%include professional_links.html%}
+  {%include blog_home.html%}
+</div>
