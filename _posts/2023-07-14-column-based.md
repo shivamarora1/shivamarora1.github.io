@@ -1,6 +1,7 @@
 ---
 categories: [backend,database]
 title: Column and Row based database
+thumbnail: /assets/images/column_based_select.png
 ---
 According to the classification of data storage, databases can be categorised as **row based database** and **column based database**. 
 **Row based database** are very simple, infact in most cases they satisfy our requirements. Database like *Postgres, MySql* store their rows data along with all column fields in different contiguous memory location. Which means Row1, Row2, Row3 would have different memory block in some physical storage. Different row different memory location.

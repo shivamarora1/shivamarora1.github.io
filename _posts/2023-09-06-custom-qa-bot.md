@@ -1,6 +1,7 @@
 ---
 categories: [ai]
 title: Make your own ChatGPT on custom data
+thumbnail: "/assets/images/chat_gpt_embeddings_working.png"
 ---
 We all know **ChatGPT** is AI powered model which can interact with humans. Literally you can ask any thing to **ChatGPT** like *recipes for incoming birthday*, *gifts idea for anniversary*, *questions related to any law* etc. The catch here is ChatGPT has knowledge only until **2021** generally available data. It means ChatGPT can't answer about the events happended after **2021**. Also it does not have knowledge about your private data.
 

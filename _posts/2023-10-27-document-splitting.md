@@ -1,6 +1,7 @@
 ---
 categories: [ai]
 title: Document Transformers?
+thumbnail: "/assets/images/rag.png"
 ---
 ### Document Transformers
 In this article we are going to discuss about the document transformers. Basically document transformer is the process in which we split the large documents into multiple smaller chunks so that they can be stored and retrieved easily from the vector database.

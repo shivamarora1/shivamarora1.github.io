@@ -1,6 +1,7 @@
 ---
 categories: [ai]
 title: What really Prompt Engineers do?
+thumbnail: "/assets/images/prompt_engineer.png"
 ---
 
 With the rise of **AI generative** tools like **ChatGPT**, **Dall-E**, **Whisper** , A new term Prompt Engineering also came to world. But what kind of engineers are **prompt engineer**. Let us first understand meaning of word *Prompt*.
