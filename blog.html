@@ -2,31 +2,56 @@
 title: Blog
 ---
 
-<h3>Posts</h3>
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+  <div class="flex flex-wrap justify-between gap-3 p-4">
+    <div class="flex min-w-72 flex-col gap-3">
+      <p class="text-white tracking-light text-[32px] font-bold leading-tight">
+        Blog
+      </p>
+      <p class="text-[#cba990] text-sm font-normal leading-normal">
+        <!-- You can sub title here -->
+      </p>
+    </div>
+  </div>
 
-<div id="blog">
-  <ul>
-    {% for post in site.posts %}
-    <li>
-      <div class="post">
+  {% for post in site.posts %}
+  <div class="flex gap-4 bg-[#231810] px-4 py-3 justify-between">
+    <div class="flex items-start gap-4">
+      <div
+        class="bg-center bg-no-repeat bg-white aspect-square bg-cover rounded size-[70px]"
+        style="
+          background-image: url('{{post.thumbnail}}');
+        "
+      ></div>
+      <div class="flex flex-1 flex-col justify-center">
+        <p class="text-white text-base font-medium leading-normal">
+          {{ post.title }}
+        </p>
+        <p class="text-[#cba990] text-sm font-normal leading-normal">
+          Categories: {% for c in post.categories%} {% assign category =
+          site.categories | where: 'alias', c | first %} {% if category%}
+          <a href="{{category.url}}"
+            ><span class="category underline">{{category.title}}</span></a
+          >&nbsp; {% endif%} {% endfor %}
+        </p>
+        <p class="text-[#cba990] text-sm font-normal leading-normal">
+          Published on {{post.date | date_to_string}}
+        </p>
+      </div>
+    </div>
+    <div class="shrink-0">
+      <button
+        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-8 px-4 bg-[#493222] text-white text-sm font-medium leading-normal w-fit"
+      >
         {% if post.external_link %}
         <a href="{{ post.external_link }}">
         {% else %}
         <a href="{{ post.url }}">
         {% endif %}
-          <div class="heading">{{ post.title }}</div>
-          <div class="sub-script">
-            Posted on {{post.date | date_to_string}} · 
-            {% for c in post.categories%} 
-              {% assign category = site.categories | where: 'alias', c | first %} 
-              {% if category%}
-                <a href="{{category.url}}"><span class="category">{{category.title}}</span></a>&nbsp;
-              {% endif%} 
-            {% endfor %}
-          </div>
+          <span class="truncate">Read More</span>
         </a>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+      </button>
+    </div>
+  </div>
+  {% endfor %}
 </div>

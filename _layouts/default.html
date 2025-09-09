@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{page.title}}</title>
+    {% if site.favicon %}
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ site.favicon | relative_url }}"
+    />
+    {% endif %}
 
-<head>
-  <meta charset="utf-8" />
-  <title>{{page.title}}</title>
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-  {% if site.favicon %}
-  <link rel="icon" type="image/x-icon" href="{{ site.favicon | relative_url }}">
-  {% endif %}
-</head>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  </head>
 
-{%include g_tag.html%}
+  {%include g_tag.html%}
 
-<body>
-  {% include navigation.html %}
-  <div class="page-content">
-    <div class="content">{{content}}</div>
-  </div>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[#231810] dark group/design-root overflow-x-hidden"
+      style="font-family: 'Space Grotesk', 'Noto Sans', sans-serif"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        {% include navigation.html %}
 
-  {% include footer.html%}
-</body>
-
+        <div class="px-40 flex flex-1 justify-center py-5">
+          {{content}}
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

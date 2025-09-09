@@ -1,20 +1,63 @@
 ---
 title: Projects
 ---
-<h3>Projects</h3>
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+  <div class="flex flex-wrap justify-between gap-3 p-4 mb-5">
+    <div class="flex min-w-72 flex-col gap-3">
+      <p class="text-white tracking-light text-[32px] font-bold leading-tight">
+        Projects
+      </p>
+      <p class="text-[#cba990] text-sm font-normal leading-normal">
+        A collection of my work, showcasing my skills and experience in software
+        development.
+      </p>
+    </div>
+  </div>
 
-<div id="projects">
-  <ul>
-    {% for project in site.data.projects %}
-    <li>
-      <div class="project">
-        <div class="heading">{{ project.title }}</div>
-        <div class="sub-script">
-        Posted on {{project.description}}<br>
-        <a href="{{project.github_link}}">Source Code</a>
+  {% for project in site.data.projects %}
+  <div class="p-4">
+    <div class="flex items-stretch justify-between gap-4 rounded">
+      <div class="flex flex-[2_2_0px] flex-col gap-4">
+        <div class="flex flex-col gap-1">
+          <p class="text-white text-base font-bold leading-tight">
+            {{ project.title }}
+          </p>
+          <p class="text-[#cba990] text-sm font-normal leading-normal">
+            {{project.description}}
+          </p>
         </div>
+        <button 
+          onclick="window.open('{{project.github_link}}', '_blank');"
+          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-8 px-4 flex-row-reverse bg-[#493222] text-white pr-2 gap-1 text-sm font-medium leading-normal w-fit"
+        >
+          <div
+            class="text-white"
+            data-icon="GithubLogo"
+            data-size="18px"
+            data-weight="regular"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18px"
+              height="18px"
+              fill="currentColor"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
+              ></path>
+            </svg>
+          </div>
+          <span class="truncate">View on GitHub</span>
+        </button>
       </div>
-    </li>
-    {% endfor %}
-  </ul>
+      <div
+        class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded flex-1"
+        style="
+          background-image: url('{{project.image}}');
+        "
+      ></div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
