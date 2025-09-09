@@ -1,15 +1,24 @@
 ---
 layout: default
 ---
-
-<h3>{{page.title}}</h3>
-<b>Published on:</b> {{page.date | date_to_string}}<br />
-<b>Categories:</b>
-
-{% for c in page.categories%} 
-    {% assign category = site.categories | where: 'alias', c | first %} 
-        {% if category%}
-            <i><a href="{{category.url}}">{{category.title}}</a></i> 
-        {% endif%} 
-{% endfor %}
-{{content}}
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+  <h2
+    class="text-white tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5"
+  >
+    {{page.title}}
+  </h2>
+  <p class="text-[#cba990] text-sm font-normal leading-normal pb-3 pt-1 px-4">
+    Published on {{page.date | date_to_string}} | Categories: {% for c in
+    page.categories%} {% assign category = site.categories | where: 'alias', c |
+    first %} {% if category%}
+    <i
+      ><a href="{{category.url}}"
+        ><span class="underline">{{category.title}}</span></a
+      ></i
+    >
+    {% endif%} {% endfor %}
+  </p>
+  <div class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
+    {{content}}
+  </div>
+</div>
